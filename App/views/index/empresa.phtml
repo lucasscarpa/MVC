@@ -1,1 +1,6 @@
-Controller: index, Action: Empresa
+<h1>Obras</h1>
+<ul>
+    <?php foreach($this->view->obras as $obra): ?>
+        <li><?php echo $obra['nome']; ?></li>
+    <?php endforeach; ?>
+</ul>

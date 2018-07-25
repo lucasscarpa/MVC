@@ -3,23 +3,28 @@
 namespace App\Controllers;
 
 use SON\Controller\Action;
-use App\Models\Artigo;
+use SON\Di\Container;
 
 class Index extends Action
 {
 
     public function index()
     {
-        $artigo = new Artigo(\App\Init::getDb());
-        $artigos = $artigo->fetchAll();
+        $usuario = Container::getClass("Usuario");
+        $usuarios = $usuario->fetchAll();
 
-        $this->view->artigos = $artigos;
-
+        $this->view->usuarios = $usuarios;
         $this->render('index');
     }
 
     public function empresa()
     {
+
+        $obra = Container::getClass("Obra");
+        $obras = $obra->fetchAll();
+
+        $this->view->obras = $obras;
+
         $this->render('empresa');
     }
 

@@ -1,7 +1,8 @@
-<h1>Index!</h1>
+<h1>Usuarios</h1>
+
 
 <ul>
-    <?php foreach($this->view->nomes as $nome): ?>
-        <li><?php echo $nome; ?></li>
+    <?php foreach($this->view->usuarios as $usuario): ?>
+        <li><?php echo $usuario['nome']; ?></li>
     <?php endforeach; ?>
 </ul>
