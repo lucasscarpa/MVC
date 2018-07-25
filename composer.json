@@ -1,0 +1,21 @@
+{
+        "name": "son/mvc",
+        "require": {
+            "php": ">=5.3"
+        },
+        "description": "mvc project",
+        "minimum-stability": "stable",
+        "license": "proprietary",
+        "autoload": {
+            "psr-0": {
+                "SON": "vendor",
+                "App": "/"
+            }
+        },
+        "authors": [
+            {
+                "name": "author's name",
+                "email": "email@example.com"
+            }
+        ]
+    }
