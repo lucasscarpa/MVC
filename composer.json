@@ -1,21 +1,11 @@
 {
-        "name": "son/mvc",
-        "require": {
-            "php": ">=5.3"
-        },
-        "description": "mvc project",
-        "minimum-stability": "stable",
-        "license": "proprietary",
-        "autoload": {
-            "psr-0": {
-                "SON": "vendor",
-                "App": "/"
-            }
-        },
-        "authors": [
-            {
-                "name": "author's name",
-                "email": "email@example.com"
-            }
-        ]
+    "require": {
+        "twig/twig": "~2.0"
+    },
+    "autoload": {
+        "psr-4": {
+             "Core\\": "Core/",
+             "App\\": "App/"
+        }
     }
+}
