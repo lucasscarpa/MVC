@@ -7,5 +7,7 @@
              "Core\\": "Core/",
              "App\\": "App/"
         }
-    }
+    },
+    "description": "",
+    "name": ""
 }
