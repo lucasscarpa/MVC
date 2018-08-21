@@ -11,13 +11,16 @@ class Init extends Bootstrap
     {
         $ar['home'] = array('route' => '/', 'controller' => 'index', 'action' => 'index');
         $ar['empresa'] = array('route' => '/empresa', 'controller' => 'index', 'action' => 'empresa');
+        $ar['obras'] = array('route' => '/obras', 'controller' => 'obra', 'action' => 'index');
+        $ar['usuarios'] = array('route' => '/usuarios', 'controller' => 'usuario', 'action' => 'index');
+
 
         $this->setRoutes($ar);
     }
 
     public static function getDb()
     {
-        $db = new \PDO("mysql:host=localhost;dbname=mvc", "root", "root");
+        $db = new \PDO("mysql:host=localhost;dbname=crud_autodoc", "root", "root");
         return $db;
 
     }

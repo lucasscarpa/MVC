@@ -1,0 +1,32 @@
+<?php
+
+?>
+
+<div class="z-depth-1 grey lighten-4 row" style="padding: 30px;">
+  <div class="container">
+    <h3>OBRAS</h3>
+    <table class="table">
+        
+        <thead>
+          <tr>
+            <th><a class="btn btn-primary" href="form-obras.php" style="margin-right: 30px;">Novo</a></th>
+            <th>NOME</th>
+            <th>DESCRICAO</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <?php foreach($this->view->obras as $obra): ?>
+            <td style="margin-right: 30px;" > 
+                <a href="../../model/Obra/deleta_obra.php?id=<?php echo $obra['id']?>" class="btn-floating btn-small waves-effect waves-light red right"><i class="material-icons">delete</i></a>
+                <span></span>
+                <a href="form-obras.php?id=<?php echo $obra['id']?>" class="btn-floating btn-small waves-effect waves-light red right"><i class="material-icons">edit</i></a>
+            </td>
+            <td><?php print_r($obra['nome']) ?></td>
+            <td><?php print_r($obra['descricao']) ?></td>
+          </tr>
+            <?php endforeach; ?>
+        </tbody>
+      </table>
+  </div>
+</div>

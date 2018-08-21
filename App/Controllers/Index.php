@@ -12,7 +12,6 @@ class Index extends Action
     {
         $usuario = Container::getClass("Usuario");
         $usuarios = $usuario->fetchAll();
-
         $this->view->usuarios = $usuarios;
         $this->render('index');
     }
@@ -22,7 +21,6 @@ class Index extends Action
 
         $obra = Container::getClass("Obra");
         $obras = $obra->fetchAll();
-
         $this->view->obras = $obras;
 
         $this->render('empresa');

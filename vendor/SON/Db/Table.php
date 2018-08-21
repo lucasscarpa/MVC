@@ -15,8 +15,18 @@ abstract class Table
     public function fetchAll()
     {
         $query = "Select * from {$this->table}";
-
+        
         return $this->db->query($query);
+    }
+
+    public function all()
+    {
+        $stmt = $this->db->prepare("Select * from {$this->table}");
+        $stmt->bindParam(":id", $id);
+        $stmt->execute();
+        $res = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+
+        return $res;
     }
 
     public function find($id)
