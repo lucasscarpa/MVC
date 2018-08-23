@@ -29,12 +29,12 @@
           <tr>
             <?php foreach($this->view->usuarios as $usuario): ?>
             <td style="margin-right: 30px;" > 
-                <a href="../../model/Usuario/deleta_usuario.php?id=<?php echo $usuario['id']?>" class="btn-floating btn-small waves-effect waves-light red right"><i class="material-icons">delete</i></a>
-                <a href="form-usuario.php?id=<?php echo $usuario['id']?>" class="btn-floating btn-small waves-effect waves-light red right"><i class="material-icons">edit</i></a>
+                <a href="/usuarios/delete/<?php echo $usuario['id'] ?>" class="btn-floating btn-small waves-effect waves-light red right"><i class="material-icons">delete</i></a>
+                <a href="/usuario/cad/<?php echo $usuario['id']?>" class="btn-floating btn-small waves-effect waves-light red right"><i class="material-icons">edit</i></a>
             </td>
             <td><?php print_r($usuario['nome']) ?></td>
             <td><?php print_r($usuario['email']) ?></td>
-            <td><?php print_r(implode(', ' , $usuario['obra'])); ?></td>
+            <td><?php print_r($usuario['obra']); ?></td>
           </tr>
             <?php endforeach; ?>
         </tbody>

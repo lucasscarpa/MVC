@@ -13,6 +13,7 @@ class Init extends Bootstrap
         $ar['empresa'] = array('route' => '/empresa', 'controller' => 'index', 'action' => 'empresa');
         $ar['obras'] = array('route' => '/obras', 'controller' => 'obra', 'action' => 'index');
         $ar['usuarios'] = array('route' => '/usuarios', 'controller' => 'usuario', 'action' => 'index');
+        $ar['usuariosCad'] = array('route' => '/usuarios/delete/{id}', 'controller' => 'usuario', 'action' => 'delete');
 
 
         $this->setRoutes($ar);

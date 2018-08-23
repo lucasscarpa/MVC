@@ -10,19 +10,21 @@ class Usuario extends Action
 {
     public function index()
     {
-        $usuario['obra'] = [];
-        $usuario = Container::getClass("Usuario");
-        $usuarios = $usuario->all();
+        $usuarioModel = Container::getClass("Usuario");
+        $usuarioLista = $usuarioModel->all();
         
-        foreach($usuarios as &$usuario)
+        foreach($usuarioLista as &$usuario)
         {
-            $usuario->getObra($usuario['id']);
+            $usuario = $usuarioModel->getObra($usuario);
         }
 
-        $this->view->usuarios = $usuarios;
-
-
+        $this->view->usuarios = $usuarioLista;
         $this->render('index');
+    }
+
+    public function delete($id)
+    {
+        
     }
 
 }
