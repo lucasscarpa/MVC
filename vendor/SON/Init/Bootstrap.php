@@ -19,12 +19,13 @@ abstract class Bootstrap
     {
         array_walk($this->routes, function ($route) use ($url) {
             echo '<pre>';
+
             if(preg_match('/\{(.*?)\}/', $route['route'])) {
                 $urlArray = explode('/', $url);
-                // $route = explode('/', $url);
-                $teste = array_pop($urlArray);
-                $url = implode('/', $urlArray);
-                // var_dump($url, $route['route']);
+                $variavel = array_pop($urlArray);
+                $url = $urlArray;
+                var_dump($url);
+                exit;
             }
 
             if($url == $route['route']) {
