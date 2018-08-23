@@ -18,18 +18,19 @@ abstract class Bootstrap
     protected function run($url)
     {
         array_walk($this->routes, function ($route) use ($url) {
-            echo '<pre>';
 
             if(preg_match('/\{(.*?)\}/', $route['route'])) {
                 $urlArray = explode('/', $url);
                 $variavel = array_pop($urlArray);
-                $url = $urlArray;
-                var_dump($url);
-                exit;
+
+                $rota = explode('/', $route['route']);
+                array_pop($rota);
+                
+                $route['route'] = implode('/', $rota);
+                $url = implode('/', $urlArray);
             }
 
             if($url == $route['route']) {
-                echo 'oi';
                 $class = "App\\Controllers\\" . ucfirst($route['controller']);
                 $controller = new $class;
                 $action = $route['action'];

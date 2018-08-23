@@ -4,15 +4,10 @@
   <div class="container">
     <h3>USUARIOS</h3>
     <?php
-      if(isset($_GET['success']))
+      if(isset($this->view->message))
       {
-        if($_GET['success'] == 1)
-        {
-          echo 'Usuário deletado';
-        }
-        else {
-          echo 'Erro ao excluir usuário';
-        }
+        echo $this->view->message;
+       
       }
     ?>
 

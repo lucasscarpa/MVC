@@ -24,6 +24,11 @@ class Usuario extends Action
 
     public function delete($id)
     {
+        $usuarioModel = Container::getClass("Usuario");
+        $usuarioModel = $usuarioModel->delete($id);
+
+        $this->view->mensagem = 'teste';
+        $this->index();
         
     }
 
