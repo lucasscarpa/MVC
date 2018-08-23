@@ -13,7 +13,9 @@ class Init extends Bootstrap
         $ar['empresa'] = array('route' => '/empresa', 'controller' => 'index', 'action' => 'empresa');
         $ar['obras'] = array('route' => '/obras', 'controller' => 'obra', 'action' => 'index');
         $ar['usuarios'] = array('route' => '/usuarios', 'controller' => 'usuario', 'action' => 'index');
-        $ar['usuariosCad'] = array('route' => '/usuarios/delete/{id}', 'controller' => 'usuario', 'action' => 'delete');
+        $ar['usuarioDelete'] = array('route' => '/usuarios/delete/{id}', 'controller' => 'usuario', 'action' => 'delete');
+        $ar['usuarioForm'] = array('route' => '/usuarios/form', 'controller' => 'usuario', 'action' => 'form');
+        $ar['usuarioEdit'] = array('route' => '/usuarios/form/{id}', 'controller' => 'usuario', 'action' => 'form');
 
 
         $this->setRoutes($ar);
@@ -21,7 +23,11 @@ class Init extends Bootstrap
 
     public static function getDb()
     {
-        $db = new \PDO("mysql:host=localhost;dbname=crud_autodoc", "root", "root");
+        try {
+            $db = new \PDO("mysql:host=localhost;dbname=crud_autodoc", "root", "root");
+        } catch (\Exception $e) {
+            return $e->getMessage();
+        }
         return $db;
 
     }

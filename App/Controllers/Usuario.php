@@ -27,9 +27,28 @@ class Usuario extends Action
         $usuarioModel = Container::getClass("Usuario");
         $usuarioModel = $usuarioModel->delete($id);
 
-        $this->view->mensagem = 'teste';
+        $this->view->menssagem = 'Usuário excluido com sucesso!';
         $this->index();
         
+    }
+
+    public function form($id = null)
+    {
+        if(!$id) {
+            return $this->cadastrar();
+        }
+
+        return $this->editar();
+    }
+
+    public function cadastrar()
+    {
+        echo 'Cadastrar';
+    }
+
+    public function editar()
+    {
+        echo 'Editar';
     }
 
 }
